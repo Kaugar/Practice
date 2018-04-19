@@ -13,7 +13,7 @@ public class RestController {
   WarehouseRepo warehouseRepo;
 
   @GetMapping(value = "/warehouse/query")
-  public Clothes json (@RequestParam(value = "price", required = false) float price,
+  public Clothes json (@RequestParam(value = "price", required = false) Float price,
                         @RequestParam(value = "type", required = false) String type) {
     if (type.equals("lower")) {
       return new Clothes("ok", warehouseRepo.findByUnitPriceLessThan(price));
